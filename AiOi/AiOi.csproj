@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\CreateUpdatePatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\CreateUpdatePatientForm.Designer.cs">
+      <DependentUpon>CreateUpdatePatientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\MessageHelper.cs" />
+    <Compile Include="CustomControls\PatientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\PatientControl.Designer.cs">
+      <DependentUpon>PatientControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AiOiModel.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\MedicalSpecialists.cs" />
@@ -71,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\PatientControl.resx">
+      <DependentUpon>PatientControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,6 +97,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Docs\Diagram.pdf" />
+    <None Include="Docs\patient.xlsx" />
+    <None Include="Docs\visits.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,10 +114,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CustomControls\" />
-    <Folder Include="Docs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\fluorography.png" />
   </ItemGroup>
@@ -117,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\Script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
