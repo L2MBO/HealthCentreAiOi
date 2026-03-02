@@ -11,25 +11,18 @@ using System.Windows.Forms;
 
 namespace AiOi.AppForms
 {
-    public partial class CreateUpdatePatientForm : Form
+    public partial class HistoryForm : Form
     {
         Patients _patient;
 
-        public CreateUpdatePatientForm(Patients patient = null)
+        public HistoryForm(Patients patient)
         {
             InitializeComponent();
 
             _patient = patient;
-
-            SetFormStyle();
         }
 
-        private void SetFormStyle()
-        {
-            
-        }
-
-        private void CreateUpdatePatientForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void HistoryForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

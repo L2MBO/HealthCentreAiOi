@@ -61,12 +61,19 @@
     <Compile Include="AppForms\CreateUpdatePatientForm.Designer.cs">
       <DependentUpon>CreateUpdatePatientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ImageHelper.cs" />
     <Compile Include="Classes\MessageHelper.cs" />
     <Compile Include="CustomControls\PatientControl.cs">
       <SubType>UserControl</SubType>
@@ -81,6 +88,12 @@
     <Compile Include="Models\Visits.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForms\CreateUpdatePatientForm.resx">
+      <DependentUpon>CreateUpdatePatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

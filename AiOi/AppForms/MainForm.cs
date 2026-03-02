@@ -18,6 +18,14 @@ namespace AiOi.AppForms
         public MainForm()
         {
             InitializeComponent();
+            SetFormStyle();
+        }
+
+        private void SetFormStyle()
+        {
+            sortComboBox.SelectedIndex = 0;
+            filterComboBox.SelectedIndex = 0;
+
             ApplyFilterAndSort();
         }
 
@@ -79,6 +87,11 @@ namespace AiOi.AppForms
             Form form = new CreateUpdatePatientForm();
             form.Show();
             this.Hide();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

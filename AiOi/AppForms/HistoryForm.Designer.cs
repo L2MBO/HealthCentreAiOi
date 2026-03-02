@@ -1,6 +1,6 @@
 ﻿namespace AiOi.AppForms
 {
-    partial class CreateUpdatePatientForm
+    partial class HistoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // CreateUpdatePatientForm
+            // HistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "CreateUpdatePatientForm";
-            this.Text = "CreateUpdatePatientForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateUpdatePatientForm_FormClosed);
+            this.Name = "HistoryForm";
+            this.Text = "HistoryForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HistoryForm_FormClosed);
             this.ResumeLayout(false);
 
         }
