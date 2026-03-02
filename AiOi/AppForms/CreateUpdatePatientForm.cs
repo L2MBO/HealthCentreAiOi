@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AiOi.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,20 @@ namespace AiOi.AppForms
 {
     public partial class CreateUpdatePatientForm : Form
     {
-        public CreateUpdatePatientForm()
+        Patients _patient;
+
+        public CreateUpdatePatientForm(Patients patient = null)
         {
             InitializeComponent();
+
+            _patient = patient;
+
+            SetFormStyle();
+        }
+
+        private void SetFormStyle()
+        {
+            
         }
     }
 }

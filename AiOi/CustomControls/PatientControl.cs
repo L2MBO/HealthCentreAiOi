@@ -1,4 +1,5 @@
-﻿using AiOi.Models;
+﻿using AiOi.AppForms;
+using AiOi.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,13 @@ namespace AiOi.CustomControls
         private void FillPatientData()
         {
             
+        }
+
+        private void PatientControl_Load(object sender, EventArgs e)
+        {
+            Form form = new CreateUpdatePatientForm(_patient);
+            form.Show();
+            this.ParentForm.Hide();
         }
     }
 }
