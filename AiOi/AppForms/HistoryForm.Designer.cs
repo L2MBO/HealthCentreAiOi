@@ -41,7 +41,6 @@
             this.Name = "HistoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "История пациента";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HistoryForm_FormClosed);
             this.ResumeLayout(false);
 
         }

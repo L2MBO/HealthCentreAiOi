@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AiOi.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,10 @@ namespace AiOi.AppForms
                 Form form = new MainForm();
                 form.Show();
                 this.Hide();
+            }
+            else
+            {
+                MessageHelper.ShowInfoMessage("Неверный логин и/или пароль");
             }
         }
 

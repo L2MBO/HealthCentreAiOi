@@ -16,6 +16,7 @@ namespace AiOi.CustomControls
     public partial class PatientControl : UserControl
     {
         Patients _patient;
+        Patients _currentPatient = Program.currentPatient;
 
         public PatientControl(Patients patient)
         {
@@ -39,6 +40,12 @@ namespace AiOi.CustomControls
             ImageHelper.LoadImage(_patient, avatarPictureBox);
 
             LoadPatientStatus();
+            AddUserFunctional();
+        }
+
+        private void AddUserFunctional()
+        {
+            historyButton.Visible = _currentPatient != null && _currentPatient.UserRoleId != 1;
         }
 
         private void LoadPatientStatus()
@@ -55,9 +62,12 @@ namespace AiOi.CustomControls
 
         private void PatientControl_Click(object sender, EventArgs e)
         {
-            Form form = new CreateUpdatePatientForm(_patient);
-            form.Show();
-            this.ParentForm.Hide();
+            if (_currentPatient != null && _currentPatient.UserRoleId == 3)
+            {
+                Form form = new CreateUpdatePatientForm(_patient);
+                form.Show();
+                this.ParentForm.Hide();
+            }
         }
 
         private void historyButton_Click(object sender, EventArgs e)

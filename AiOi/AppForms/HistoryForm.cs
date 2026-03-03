@@ -21,10 +21,5 @@ namespace AiOi.AppForms
 
             _patient = patient;
         }
-
-        private void HistoryForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }
