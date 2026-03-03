@@ -82,6 +82,7 @@
     <Compile Include="AppForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\CaloriesCalculator.cs" />
     <Compile Include="Classes\ImageHelper.cs" />
     <Compile Include="Classes\MessageHelper.cs" />
     <Compile Include="Classes\ValidationManager.cs" />
@@ -183,10 +184,6 @@
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.png" />
-    <Content Include="Images\wdw.png" />
-    <Content Include="Images\Снимок экрана 2026-02-26 011643.png" />
-    <Content Include="Images\Снимок экрана 2026-03-03 160623.png" />
-    <Content Include="Images\Снимок экрана 2026-03-03 182431.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
