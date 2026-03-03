@@ -15,6 +15,7 @@ namespace AiOi.Models
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<MedicalSpecialists> MedicalSpecialists { get; set; }
         public virtual DbSet<Patients> Patients { get; set; }
+        public virtual DbSet<UserRole> UserRole { get; set; }
         public virtual DbSet<Visits> Visits { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -36,6 +37,11 @@ namespace AiOi.Models
                 .WithRequired(e => e.Patients)
                 .HasForeignKey(e => e.PatientId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<UserRole>()
+                .HasMany(e => e.Patients)
+                .WithOptional(e => e.UserRole)
+                .HasForeignKey(e => e.UserRoleId);
         }
     }
 }

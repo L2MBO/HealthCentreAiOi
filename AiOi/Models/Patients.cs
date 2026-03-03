@@ -21,6 +21,14 @@ namespace AiOi.Models
         [StringLength(200)]
         public string FullName { get; set; }
 
+        [StringLength(100)]
+        public string UserName { get; set; }
+
+        [StringLength(100)]
+        public string Password { get; set; }
+
+        public int? UserRoleId { get; set; }
+
         public int GenderId { get; set; }
 
         [Column(TypeName = "date")]
@@ -59,6 +67,8 @@ namespace AiOi.Models
         public string ImagePatch { get; set; }
 
         public virtual Gender Gender { get; set; }
+
+        public virtual UserRole UserRole { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Visits> Visits { get; set; }

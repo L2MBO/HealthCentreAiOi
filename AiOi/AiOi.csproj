@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\AuthorizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AuthorizationForm.Designer.cs">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\CreateUpdatePatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,9 +91,13 @@
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\MedicalSpecialists.cs" />
     <Compile Include="Models\Patients.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\Visits.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForms\AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\CreateUpdatePatientForm.resx">
       <DependentUpon>CreateUpdatePatientForm.cs</DependentUpon>
     </EmbeddedResource>
