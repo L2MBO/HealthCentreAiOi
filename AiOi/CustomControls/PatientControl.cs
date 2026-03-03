@@ -2,13 +2,6 @@
 using AiOi.Classes;
 using AiOi.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AiOi.CustomControls
@@ -56,7 +49,7 @@ namespace AiOi.CustomControls
             if (_patient.DisabilityGroup1 == 1 || _patient.DisabilityGroup2 == 1 || _patient.DisabilityGroup3 == 1)
                 handicapedPictureBox.Image = Properties.Resources.handicaped;
 
-            if (_patient.FluorographyDate != null) 
+            if (_patient.FluorographyDate != null)
                 fluorographyPictureBox.Image = Properties.Resources.fluorography;
         }
 

@@ -359,6 +359,7 @@
             // 
             // disabilityGroupComboBox
             // 
+            this.disabilityGroupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.disabilityGroupComboBox.FormattingEnabled = true;
             this.disabilityGroupComboBox.Items.AddRange(new object[] {
             "Нет группы инвалидности",
@@ -406,6 +407,7 @@
             // 
             // userRoleIdComboBox
             // 
+            this.userRoleIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.userRoleIdComboBox.FormattingEnabled = true;
             this.userRoleIdComboBox.Items.AddRange(new object[] {
             "Пациент",
@@ -418,6 +420,7 @@
             // 
             // genderIdComboBox
             // 
+            this.genderIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderIdComboBox.FormattingEnabled = true;
             this.genderIdComboBox.Items.AddRange(new object[] {
             "Мужской",

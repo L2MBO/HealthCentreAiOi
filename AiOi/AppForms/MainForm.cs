@@ -1,14 +1,8 @@
 ﻿using AiOi.CustomControls;
 using AiOi.Models;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AiOi.AppForms
@@ -61,20 +55,20 @@ namespace AiOi.AppForms
                 filterLabel.Visible = false;
                 filterComboBox.Visible = false;
                 addPatientButton.Visible = false;
-            }    
+            }
         }
 
         private void ApplyFilterAndSort()
         {
             flowLayoutPanel.Controls.Clear();
 
-            IQueryable <Patients> patients = Program.context.Patients.OrderBy(a => a.BirthdayDate);
+            IQueryable<Patients> patients = Program.context.Patients.OrderBy(a => a.BirthdayDate);
 
             if (!string.IsNullOrWhiteSpace(searchTextBox.Text))
             {
                 string searchText = searchTextBox.Text.ToLower();
 
-                patients = patients.Where(p => p.FullName.ToLower().Contains(searchText) 
+                patients = patients.Where(p => p.FullName.ToLower().Contains(searchText)
                     || p.InsurancePolicy.ToLower().Contains(searchText));
             }
 
