@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.fullNameLabel = new System.Windows.Forms.Label();
             this.addPatientButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,8 +43,6 @@
             this.sortLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.fullNameLabel = new System.Windows.Forms.Label();
-            this.logoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -74,6 +74,29 @@
             this.splitContainer1.SplitterDistance = 96;
             this.splitContainer1.TabIndex = 0;
             // 
+            // logoutButton
+            // 
+            this.logoutButton.BackColor = System.Drawing.Color.Red;
+            this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.logoutButton.Location = new System.Drawing.Point(657, 56);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(132, 27);
+            this.logoutButton.TabIndex = 8;
+            this.logoutButton.Text = "Выйти из системы";
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // fullNameLabel
+            // 
+            this.fullNameLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fullNameLabel.Location = new System.Drawing.Point(419, 9);
+            this.fullNameLabel.Name = "fullNameLabel";
+            this.fullNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fullNameLabel.Size = new System.Drawing.Size(373, 13);
+            this.fullNameLabel.TabIndex = 7;
+            this.fullNameLabel.Text = "ФИО";
+            this.fullNameLabel.Visible = false;
+            // 
             // addPatientButton
             // 
             this.addPatientButton.BackColor = System.Drawing.Color.Red;
@@ -99,7 +122,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::AiOi.Properties.Resources.HealthCenter1;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(13, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
@@ -198,29 +221,6 @@
             this.searchTextBox.TabIndex = 0;
             this.searchTextBox.Visible = false;
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
-            // 
-            // fullNameLabel
-            // 
-            this.fullNameLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fullNameLabel.Location = new System.Drawing.Point(419, 9);
-            this.fullNameLabel.Name = "fullNameLabel";
-            this.fullNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fullNameLabel.Size = new System.Drawing.Size(373, 13);
-            this.fullNameLabel.TabIndex = 7;
-            this.fullNameLabel.Text = "ФИО";
-            this.fullNameLabel.Visible = false;
-            // 
-            // logoutButton
-            // 
-            this.logoutButton.BackColor = System.Drawing.Color.Red;
-            this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.logoutButton.Location = new System.Drawing.Point(657, 56);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(132, 27);
-            this.logoutButton.TabIndex = 8;
-            this.logoutButton.Text = "Выйти из системы";
-            this.logoutButton.UseVisualStyleBackColor = false;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // MainForm
             // 
