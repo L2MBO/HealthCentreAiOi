@@ -41,11 +41,15 @@
             System.Windows.Forms.Label weightLabel;
             System.Windows.Forms.Label disabilityGroup1Label;
             System.Windows.Forms.Label disabilityGroup1DateLabel;
+            System.Windows.Forms.Label imagePatchLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateUpdatePatientForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.backButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.avatarPictureBox = new System.Windows.Forms.PictureBox();
+            this.weightNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.heightNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.disabilityGroupDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.disabilityGroupComboBox = new System.Windows.Forms.ComboBox();
             this.saveChangesButton = new System.Windows.Forms.Button();
@@ -58,8 +62,6 @@
             this.insurancePolicyTextBox = new System.Windows.Forms.TextBox();
             this.fluorographyDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.clinicalExaminationDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.heightTextBox = new System.Windows.Forms.TextBox();
-            this.weightTextBox = new System.Windows.Forms.TextBox();
             fullNameLabel = new System.Windows.Forms.Label();
             userNameLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
@@ -73,11 +75,15 @@
             weightLabel = new System.Windows.Forms.Label();
             disabilityGroup1Label = new System.Windows.Forms.Label();
             disabilityGroup1DateLabel = new System.Windows.Forms.Label();
+            imagePatchLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weightNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // fullNameLabel
@@ -166,18 +172,18 @@
             heightLabel.AutoSize = true;
             heightLabel.Location = new System.Drawing.Point(12, 249);
             heightLabel.Name = "heightLabel";
-            heightLabel.Size = new System.Drawing.Size(34, 13);
+            heightLabel.Size = new System.Drawing.Size(54, 13);
             heightLabel.TabIndex = 18;
-            heightLabel.Text = "Рост:";
+            heightLabel.Text = "Рост, см:";
             // 
             // weightLabel
             // 
             weightLabel.AutoSize = true;
             weightLabel.Location = new System.Drawing.Point(12, 275);
             weightLabel.Name = "weightLabel";
-            weightLabel.Size = new System.Drawing.Size(29, 13);
+            weightLabel.Size = new System.Drawing.Size(46, 13);
             weightLabel.TabIndex = 20;
-            weightLabel.Text = "Вес:";
+            weightLabel.Text = "Вес, кг:";
             // 
             // disabilityGroup1Label
             // 
@@ -197,6 +203,15 @@
             disabilityGroup1DateLabel.TabIndex = 25;
             disabilityGroup1DateLabel.Text = "Дата получения \r\nгруппы инвалидости:";
             // 
+            // imagePatchLabel
+            // 
+            imagePatchLabel.AutoSize = true;
+            imagePatchLabel.Location = new System.Drawing.Point(13, 375);
+            imagePatchLabel.Name = "imagePatchLabel";
+            imagePatchLabel.Size = new System.Drawing.Size(120, 13);
+            imagePatchLabel.TabIndex = 28;
+            imagePatchLabel.Text = "Аватар пользователя:";
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -213,6 +228,10 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.avatarPictureBox);
+            this.splitContainer1.Panel2.Controls.Add(imagePatchLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.weightNumericUpDown);
+            this.splitContainer1.Panel2.Controls.Add(this.heightNumericUpDown);
             this.splitContainer1.Panel2.Controls.Add(disabilityGroup1DateLabel);
             this.splitContainer1.Panel2.Controls.Add(this.disabilityGroupDateDateTimePicker);
             this.splitContainer1.Panel2.Controls.Add(disabilityGroup1Label);
@@ -237,10 +256,8 @@
             this.splitContainer1.Panel2.Controls.Add(clinicalExaminationDateLabel);
             this.splitContainer1.Panel2.Controls.Add(this.clinicalExaminationDateDateTimePicker);
             this.splitContainer1.Panel2.Controls.Add(heightLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.heightTextBox);
             this.splitContainer1.Panel2.Controls.Add(weightLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.weightTextBox);
-            this.splitContainer1.Size = new System.Drawing.Size(344, 511);
+            this.splitContainer1.Size = new System.Drawing.Size(344, 590);
             this.splitContainer1.SplitterDistance = 95;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -254,7 +271,6 @@
             this.backButton.TabIndex = 2;
             this.backButton.Text = "Вернуться назад";
             this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Visible = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // titleLabel
@@ -269,13 +285,69 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::AiOi.Properties.Resources.HealthCenter1;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(13, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // avatarPictureBox
+            // 
+            this.avatarPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.avatarPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.avatarPictureBox.Location = new System.Drawing.Point(147, 359);
+            this.avatarPictureBox.Name = "avatarPictureBox";
+            this.avatarPictureBox.Size = new System.Drawing.Size(70, 70);
+            this.avatarPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarPictureBox.TabIndex = 29;
+            this.avatarPictureBox.TabStop = false;
+            this.avatarPictureBox.Click += new System.EventHandler(this.avatarPictureBox_Click);
+            // 
+            // weightNumericUpDown
+            // 
+            this.weightNumericUpDown.Location = new System.Drawing.Point(147, 272);
+            this.weightNumericUpDown.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.weightNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.weightNumericUpDown.Name = "weightNumericUpDown";
+            this.weightNumericUpDown.Size = new System.Drawing.Size(179, 20);
+            this.weightNumericUpDown.TabIndex = 28;
+            this.weightNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // heightNumericUpDown
+            // 
+            this.heightNumericUpDown.Location = new System.Drawing.Point(147, 246);
+            this.heightNumericUpDown.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.heightNumericUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.heightNumericUpDown.Name = "heightNumericUpDown";
+            this.heightNumericUpDown.Size = new System.Drawing.Size(179, 20);
+            this.heightNumericUpDown.TabIndex = 27;
+            this.heightNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // disabilityGroupDateDateTimePicker
             // 
@@ -288,23 +360,27 @@
             // disabilityGroupComboBox
             // 
             this.disabilityGroupComboBox.FormattingEnabled = true;
+            this.disabilityGroupComboBox.Items.AddRange(new object[] {
+            "Нет группы инвалидности",
+            "1 группа инвалидности",
+            "2 группа инвалидности",
+            "3 группа инвалидности"});
             this.disabilityGroupComboBox.Location = new System.Drawing.Point(147, 299);
             this.disabilityGroupComboBox.Name = "disabilityGroupComboBox";
             this.disabilityGroupComboBox.Size = new System.Drawing.Size(179, 21);
             this.disabilityGroupComboBox.TabIndex = 24;
-            this.disabilityGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.disabilityGroup1ComboBox_SelectedIndexChanged);
+            this.disabilityGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.disabilityGroupComboBox_SelectedIndexChanged);
             // 
             // saveChangesButton
             // 
             this.saveChangesButton.BackColor = System.Drawing.Color.Red;
             this.saveChangesButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveChangesButton.Location = new System.Drawing.Point(15, 375);
+            this.saveChangesButton.Location = new System.Drawing.Point(15, 449);
             this.saveChangesButton.Name = "saveChangesButton";
             this.saveChangesButton.Size = new System.Drawing.Size(311, 27);
             this.saveChangesButton.TabIndex = 22;
             this.saveChangesButton.Text = "Сохранить изменения";
             this.saveChangesButton.UseVisualStyleBackColor = false;
-            this.saveChangesButton.Visible = false;
             this.saveChangesButton.Click += new System.EventHandler(this.saveChangesButton_Click);
             // 
             // fullNameTextBox
@@ -331,6 +407,10 @@
             // userRoleIdComboBox
             // 
             this.userRoleIdComboBox.FormattingEnabled = true;
+            this.userRoleIdComboBox.Items.AddRange(new object[] {
+            "Пациент",
+            "Врач",
+            "Администратор"});
             this.userRoleIdComboBox.Location = new System.Drawing.Point(147, 88);
             this.userRoleIdComboBox.Name = "userRoleIdComboBox";
             this.userRoleIdComboBox.Size = new System.Drawing.Size(179, 21);
@@ -339,6 +419,9 @@
             // genderIdComboBox
             // 
             this.genderIdComboBox.FormattingEnabled = true;
+            this.genderIdComboBox.Items.AddRange(new object[] {
+            "Мужской",
+            "Женский"});
             this.genderIdComboBox.Location = new System.Drawing.Point(147, 115);
             this.genderIdComboBox.Name = "genderIdComboBox";
             this.genderIdComboBox.Size = new System.Drawing.Size(179, 21);
@@ -372,26 +455,12 @@
             this.clinicalExaminationDateDateTimePicker.Size = new System.Drawing.Size(179, 20);
             this.clinicalExaminationDateDateTimePicker.TabIndex = 17;
             // 
-            // heightTextBox
-            // 
-            this.heightTextBox.Location = new System.Drawing.Point(147, 246);
-            this.heightTextBox.Name = "heightTextBox";
-            this.heightTextBox.Size = new System.Drawing.Size(179, 20);
-            this.heightTextBox.TabIndex = 19;
-            // 
-            // weightTextBox
-            // 
-            this.weightTextBox.Location = new System.Drawing.Point(147, 272);
-            this.weightTextBox.Name = "weightTextBox";
-            this.weightTextBox.Size = new System.Drawing.Size(179, 20);
-            this.weightTextBox.TabIndex = 21;
-            // 
             // CreateUpdatePatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(344, 511);
+            this.ClientSize = new System.Drawing.Size(344, 590);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateUpdatePatientForm";
@@ -405,6 +474,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weightNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,9 +497,10 @@
         private System.Windows.Forms.TextBox insurancePolicyTextBox;
         private System.Windows.Forms.DateTimePicker fluorographyDateDateTimePicker;
         private System.Windows.Forms.DateTimePicker clinicalExaminationDateDateTimePicker;
-        private System.Windows.Forms.TextBox heightTextBox;
-        private System.Windows.Forms.TextBox weightTextBox;
         private System.Windows.Forms.DateTimePicker disabilityGroupDateDateTimePicker;
         private System.Windows.Forms.ComboBox disabilityGroupComboBox;
+        private System.Windows.Forms.NumericUpDown weightNumericUpDown;
+        private System.Windows.Forms.NumericUpDown heightNumericUpDown;
+        private System.Windows.Forms.PictureBox avatarPictureBox;
     }
 }

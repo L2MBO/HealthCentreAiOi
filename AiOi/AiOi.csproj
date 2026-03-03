@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Classes\ImageHelper.cs" />
     <Compile Include="Classes\MessageHelper.cs" />
+    <Compile Include="Classes\ValidationManager.cs" />
     <Compile Include="CustomControls\PatientControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
