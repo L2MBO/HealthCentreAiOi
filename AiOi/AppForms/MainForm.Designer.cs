@@ -36,11 +36,13 @@
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.filterLabel = new System.Windows.Forms.Label();
             this.sortComboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.sortLabel = new System.Windows.Forms.Label();
+            this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.fullNameLabel = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,6 +60,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.logoutButton);
+            this.splitContainer1.Panel1.Controls.Add(this.fullNameLabel);
             this.splitContainer1.Panel1.Controls.Add(this.addPatientButton);
             this.splitContainer1.Panel1.Controls.Add(this.titleLabel);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
@@ -80,6 +84,7 @@
             this.addPatientButton.TabIndex = 2;
             this.addPatientButton.Text = "Добавить пациента";
             this.addPatientButton.UseVisualStyleBackColor = false;
+            this.addPatientButton.Visible = false;
             this.addPatientButton.Click += new System.EventHandler(this.addPatientButton_Click);
             // 
             // titleLabel
@@ -114,10 +119,10 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.filterComboBox);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.filterLabel);
             this.panel1.Controls.Add(this.sortComboBox);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.sortLabel);
+            this.panel1.Controls.Add(this.searchLabel);
             this.panel1.Controls.Add(this.searchTextBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -136,17 +141,19 @@
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(138, 21);
             this.filterComboBox.TabIndex = 7;
+            this.filterComboBox.Visible = false;
             this.filterComboBox.SelectedIndexChanged += new System.EventHandler(this.filterComboBox_SelectedIndexChanged);
             // 
-            // label3
+            // filterLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(418, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Сортировка по полу";
+            this.filterLabel.AutoSize = true;
+            this.filterLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.filterLabel.Location = new System.Drawing.Point(418, 4);
+            this.filterLabel.Name = "filterLabel";
+            this.filterLabel.Size = new System.Drawing.Size(95, 13);
+            this.filterLabel.TabIndex = 6;
+            this.filterLabel.Text = "Фильтр по полу";
+            this.filterLabel.Visible = false;
             // 
             // sortComboBox
             // 
@@ -158,27 +165,30 @@
             this.sortComboBox.Name = "sortComboBox";
             this.sortComboBox.Size = new System.Drawing.Size(138, 21);
             this.sortComboBox.TabIndex = 5;
+            this.sortComboBox.Visible = false;
             this.sortComboBox.SelectedIndexChanged += new System.EventHandler(this.sortComboBox_SelectedIndexChanged);
             // 
-            // label2
+            // sortLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(260, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Сортировка по возрасту";
+            this.sortLabel.AutoSize = true;
+            this.sortLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sortLabel.Location = new System.Drawing.Point(260, 4);
+            this.sortLabel.Name = "sortLabel";
+            this.sortLabel.Size = new System.Drawing.Size(139, 13);
+            this.sortLabel.TabIndex = 4;
+            this.sortLabel.Text = "Сортировка по возрасту";
+            this.sortLabel.Visible = false;
             // 
-            // label1
+            // searchLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Поиск";
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchLabel.Location = new System.Drawing.Point(12, 4);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(40, 13);
+            this.searchLabel.TabIndex = 2;
+            this.searchLabel.Text = "Поиск";
+            this.searchLabel.Visible = false;
             // 
             // searchTextBox
             // 
@@ -186,7 +196,31 @@
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(230, 20);
             this.searchTextBox.TabIndex = 0;
+            this.searchTextBox.Visible = false;
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            // 
+            // fullNameLabel
+            // 
+            this.fullNameLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fullNameLabel.Location = new System.Drawing.Point(419, 9);
+            this.fullNameLabel.Name = "fullNameLabel";
+            this.fullNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fullNameLabel.Size = new System.Drawing.Size(373, 13);
+            this.fullNameLabel.TabIndex = 7;
+            this.fullNameLabel.Text = "ФИО";
+            this.fullNameLabel.Visible = false;
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.BackColor = System.Drawing.Color.Red;
+            this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.logoutButton.Location = new System.Drawing.Point(657, 56);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(132, 27);
+            this.logoutButton.TabIndex = 8;
+            this.logoutButton.Text = "Выйти из системы";
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // MainForm
             // 
@@ -221,10 +255,12 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox filterComboBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label filterLabel;
         private System.Windows.Forms.ComboBox sortComboBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label sortLabel;
+        private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Label fullNameLabel;
+        private System.Windows.Forms.Button logoutButton;
     }
 }

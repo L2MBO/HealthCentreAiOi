@@ -32,9 +32,15 @@ namespace AiOi.AppForms
 
         private void guestButton_Click(object sender, EventArgs e)
         {
+            Program.currentPatient = null;
             Form form = new MainForm();
             form.Show();
             this.Hide();
+        }
+
+        private void AuthorizationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

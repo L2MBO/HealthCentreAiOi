@@ -15,6 +15,8 @@ namespace AiOi.AppForms
 {
     public partial class MainForm : Form
     {
+        Patients _currentPatient = Program.currentPatient;
+
         public MainForm()
         {
             InitializeComponent();
@@ -26,7 +28,40 @@ namespace AiOi.AppForms
             sortComboBox.SelectedIndex = 0;
             filterComboBox.SelectedIndex = 0;
 
+            AddUserFunctional();
             ApplyFilterAndSort();
+        }
+
+        private void AddUserFunctional()
+        {
+            if (_currentPatient != null)
+            {
+                fullNameLabel.Visible = true;
+                fullNameLabel.Text = _currentPatient.FullName;
+
+                if (_currentPatient.UserRoleId != 1)
+                {
+                    searchLabel.Visible = true;
+                    searchTextBox.Visible = true;
+                    sortLabel.Visible = true;
+                    sortComboBox.Visible = true;
+                    filterLabel.Visible = true;
+                    filterComboBox.Visible = true;
+
+                    addPatientButton.Visible = _currentPatient.UserRoleId == 3;
+                }
+            }
+            else
+            {
+                fullNameLabel.Visible = false;
+                searchLabel.Visible = false;
+                searchTextBox.Visible = false;
+                sortLabel.Visible = false;
+                sortComboBox.Visible = false;
+                filterLabel.Visible = false;
+                filterComboBox.Visible = false;
+                addPatientButton.Visible = false;
+            }    
         }
 
         private void ApplyFilterAndSort()
@@ -85,6 +120,13 @@ namespace AiOi.AppForms
         private void addPatientButton_Click(object sender, EventArgs e)
         {
             Form form = new CreateUpdatePatientForm();
+            form.Show();
+            this.Hide();
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            Form form = new AuthorizationForm();
             form.Show();
             this.Hide();
         }

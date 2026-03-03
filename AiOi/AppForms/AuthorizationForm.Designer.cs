@@ -33,11 +33,11 @@
             this.guestButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -101,22 +101,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // loginButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Логин";
-            // 
-            // userNameTextBox
-            // 
-            this.userNameTextBox.Location = new System.Drawing.Point(79, 19);
-            this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(164, 20);
-            this.userNameTextBox.TabIndex = 3;
+            this.loginButton.BackColor = System.Drawing.Color.Red;
+            this.loginButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loginButton.Location = new System.Drawing.Point(15, 92);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(228, 27);
+            this.loginButton.TabIndex = 6;
+            this.loginButton.Text = "Войти в систему";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // passwordTextBox
             // 
@@ -135,17 +130,22 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Пароль";
             // 
-            // loginButton
+            // userNameTextBox
             // 
-            this.loginButton.BackColor = System.Drawing.Color.Red;
-            this.loginButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginButton.Location = new System.Drawing.Point(15, 92);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(228, 27);
-            this.loginButton.TabIndex = 6;
-            this.loginButton.Text = "Войти в систему";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.userNameTextBox.Location = new System.Drawing.Point(79, 19);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(164, 20);
+            this.userNameTextBox.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Логин";
             // 
             // AuthorizationForm
             // 
@@ -158,6 +158,7 @@
             this.Name = "AuthorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AuthorizationForm_FormClosed);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
