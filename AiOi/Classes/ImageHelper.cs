@@ -16,8 +16,10 @@ namespace AiOi.Classes
                 return;
             }
 
-            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string imagePath = Path.Combine(baseDirectory, "Images", patient.ImagePatch);
+            string baseFolder = AppDomain.CurrentDomain.BaseDirectory;
+            string projectRoot = Path.GetFullPath(Path.Combine(baseFolder, "..", ".."));
+            string imagesFolder = Path.Combine(projectRoot, "Images");
+            string imagePath = Path.Combine(imagesFolder, patient.ImagePatch);
 
             if (!File.Exists(imagePath))
             {

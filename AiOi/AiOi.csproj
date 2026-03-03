@@ -132,6 +132,7 @@
     <None Include="Docs\Diagram.pdf" />
     <None Include="Docs\patient.xlsx" />
     <None Include="Docs\visits.xlsx" />
+    <None Include="Docs\Тестирование.docx" />
     <None Include="Health_Centre_LyamkinDataSet.xsc">
       <DependentUpon>Health_Centre_LyamkinDataSet.xsd</DependentUpon>
     </None>
@@ -179,6 +180,13 @@
   <ItemGroup>
     <Content Include="Docs\Script.sql" />
     <Content Include="HealthCenter.ico" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\wdw.png" />
+    <Content Include="Images\Снимок экрана 2026-02-26 011643.png" />
+    <Content Include="Images\Снимок экрана 2026-03-03 160623.png" />
+    <Content Include="Images\Снимок экрана 2026-03-03 182431.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

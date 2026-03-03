@@ -185,7 +185,9 @@ namespace AiOi.AppForms
                 {
                     try
                     {
-                        string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                        string baseFolder = AppDomain.CurrentDomain.BaseDirectory;
+                        string projectRoot = Path.GetFullPath(Path.Combine(baseFolder, "..", ".."));
+                        string imagesFolder = Path.Combine(projectRoot, "Images");
 
                         if (!Directory.Exists(imagesFolder))
                             Directory.CreateDirectory(imagesFolder);
